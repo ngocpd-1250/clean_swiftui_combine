@@ -1,0 +1,16 @@
+//
+//  dev.xcconfig
+//  BaseSwiftUI
+//
+//  Created by phan.duong.ngoc on 15/04/2024.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+APP_NAME = [DEV]SwiftUI
+PRODUCT_BUNDLE_IDENTIFIER = ngocpd.SwiftUIBase.dev
+
+// API:
+API_ENDPOINT = https:\/\/api.themoviedb.org
+API_VERSION = 3

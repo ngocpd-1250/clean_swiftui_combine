@@ -1,0 +1,47 @@
+/* 
+  Localizable.strings
+  BaseSwiftUI
+
+  Created by phan.duong.ngoc on 19/04/2024.
+  
+*/
+
+"onboarding.get.started" = "はじめる";
+"onboarding.page1.title" = "マイムーリーズを追加";
+"onboarding.page1.description" = "いつでも大切な情報をキャプチャして、マイムーリーズを手軽に保存しましょう。";
+"onboarding.page2.title" = "簡単に整理";
+"onboarding.page2.description" = "ミッション、目標、または単に保存場所に、似たようなグループにマイムーリーズを整理しましょう。";
+"onboarding.page3.title" = "簡単に質問";
+"onboarding.page3.description" = "マイムーリーズに関連する何かを尋ねて、すぐに答えを得ましょう。";
+
+"common.register" = "登録する";
+"common.login" = "ログイン";
+"common.username" = "ユーザー名";
+"common.password" = "パスワード";
+"common.confirm.password" = "パスワードを確認";
+"common.dont.have.account" = "アカウントをお持ちでないですか？";
+"common.already.have.account" = "すでにアカウントをお持ちですか？";
+
+"tabbar.movies" = "映画";
+"tabbar.todos" = "すべて";
+"tabbar.settings" = "設定";
+
+"movie.now.playing" = "現在上映中";
+"movie.top.rated" = "トップ評価";
+"movie.release" = "リリース";
+"movie.watch.title" = "何を見たいですか？";
+
+"settings.darkmode" = "ダークモード";
+"settings.logout" = "ログアウト";
+
+"language.english" = "英語";
+"language.japanese" = "日本語";
+
+"validation.email.invalid" = "有効なメールアドレスを入力してください。";
+"validation.email.empty" = "メールアドレスを入力してください。";
+"validation.email.maxlength" = "メールアドレスは128文字以下である必要があります。";
+"validation.password.invalid" = "有効なパスワードを入力してください。";
+"validation.password.empty" = "パスワードを入力してください。";
+"validation.password.maxlength" = "パスワードは255文字以下である必要があります。";
+"validation.confirm.password.empty" = "確認用のパスワードを入力してください。";
+"validation.confirm.password.invalid" = "パスワードが一致しません。";

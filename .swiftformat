@@ -1,0 +1,49 @@
+# file options
+
+--exclude Generated, **/*.generated.swift
+
+--disable all
+
+# rules
+--enable duplicateImports
+--enable andOperator
+--enable anyObjectProtocol
+--enable blankLineAfterImports
+--enable blankLinesAtEndOfScope
+--enable blankLinesAtStartOfScope
+--enable blankLinesBetweenImports
+--enable blankLinesBetweenScopes
+--enable blockComments
+--enable consecutiveBlankLines
+--enable consecutiveSpaces
+--enable docComments
+--enable duplicateImports
+--enable emptyBraces
+--enable elseOnSameLine
+--enable indent
+--enable redundantSelf
+--enable trailingSpace
+--enable semicolons
+--enable typeSugar
+--enable trailingClosures
+--enable unusedArguments
+--enable wrapAttributes
+--enable wrapConditionalBodies
+--enable spaceAroundParens
+--enable spaceInsideBraces
+--enable spaceInsideBrackets
+--enable spaceInsideComments
+--enable spaceInsideGenerics
+--enable spaceInsideParens
+--enable spaceInsideParens
+--enable sortDeclarations
+
+# options
+--indent 4
+--trimwhitespace always
+--semicolons never
+--shortoptionals always
+--trailingclosures
+--stripunusedargs always
+--funcattributes prev-line
+--importgrouping alpha

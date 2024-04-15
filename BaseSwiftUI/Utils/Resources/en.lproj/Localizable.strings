@@ -1,0 +1,47 @@
+/* 
+  Localizable.strings
+  BaseSwiftUI
+
+  Created by phan.duong.ngoc on 19/04/2024.
+  
+*/
+
+"onboarding.get.started" = "Get started";
+"onboarding.page1.title" = "Add mymories";
+"onboarding.page1.description" = "Capture mymories on the go and never miss important information.";
+"onboarding.page2.title" = "Easily organise";
+"onboarding.page2.description" = "Organise mymories into similar groups under missions, goals or just storage.";
+"onboarding.page3.title" = "Simply ask";
+"onboarding.page3.description" = "Ask anything relating to your mymories and get answers upfront. ";
+
+"common.register" = "Reigster";
+"common.login" = "Login";
+"common.username" = "Username";
+"common.password" = "Password";
+"common.confirm.password" = "Confirm Password";
+"common.dont.have.account" = "Don’t have an account?";
+"common.already.have.account" = "Already have an account?";
+
+"tabbar.movies" = "Movies";
+"tabbar.todos" = "Todos";
+"tabbar.settings" = "Settings";
+
+"movie.now.playing" = "Now Playing";
+"movie.top.rated" = "Top Rated";
+"movie.release" = "Release";
+"movie.watch.title" = "What do you want to watch?";
+
+"settings.darkmode" = "Dark mode";
+"settings.logout" = "Logout";
+
+"language.english" = "English";
+"language.japanese" = "Japanes";
+
+"validation.email.invalid" = "Please enter a valid email address.";
+"validation.email.empty" = "Please enter an email address.";
+"validation.email.maxlength" = "Email address should be less than 128 characters.";
+"validation.password.invalid" = "Please enter a valid password.";
+"validation.password.empty" = "Please enter a password.";
+"validation.password.maxlength" = "Password should be less than 255 characters.";
+"validation.confirm.password.empty" = "Please enter a confirm password.";
+"validation.confirm.password.invalid" = "Password does not match";
