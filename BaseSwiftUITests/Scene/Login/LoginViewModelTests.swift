@@ -46,7 +46,7 @@ final class LoginViewModelTests: XCTestCase {
         }
     }
 
-    func test_loginTrigger_withEmptyEmailEmptyPassword_showError_disablesLoginButton() {
+    func test_loginTrigger_withEmptyEmailEmptyPassword_showError_disableLoginButton() {
         // act
         input.username = ""
         input.password = ""
@@ -60,7 +60,7 @@ final class LoginViewModelTests: XCTestCase {
         }
     }
 
-    func test_loginTrigger_withInvalidEmail_showError_disablesLoginButton() {
+    func test_loginTrigger_withInvalidEmail_showError_disableLoginButton() {
         // act
         input.username = "@gmail.com"
         input.password = "Aa@123456"
@@ -73,7 +73,7 @@ final class LoginViewModelTests: XCTestCase {
         }
     }
 
-    func test_loginTrigger_withInvalidPassword_showError_disablesLoginButton() {
+    func test_loginTrigger_withInvalidPassword_showError_disableLoginButton() {
         // act
         input.username = "foo@gmail.com"
         input.password = "Aa@"

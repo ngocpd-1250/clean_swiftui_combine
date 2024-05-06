@@ -11,7 +11,7 @@ import Combine
 
 struct RegisterViewModel {
     let navigator: RegisterNavigatorType
-    @Injected(\.authUseCase) private var authUseCase
+    @Injected(\.authUseCase) var authUseCase
 }
 
 // MARK: - ViewModelType

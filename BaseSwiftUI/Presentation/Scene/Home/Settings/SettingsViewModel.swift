@@ -11,7 +11,7 @@ import Combine
 
 struct SettingsViewModel {
     let navigator: SettingsNavigatorType
-    @Injected(\.settingsUseCase) private var settingsUseCase
+    @Injected(\.settingsUseCase) var settingsUseCase
 }
 
 // MARK: - ViewModelType

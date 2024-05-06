@@ -35,8 +35,6 @@ extension MoviesViewModel: ViewModel {
     final class Output: ObservableObject {
         @Published var isLoading = false
         @Published var isReloading = false
-        @Published var topRatedMovies: [Movie] = []
-        @Published var nowPlayingMovies: [Movie] = []
         @Published var data = MoviesData()
     }
 

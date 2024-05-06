@@ -51,22 +51,6 @@ packages:
 
 targets: # The List of our targets
   BaseSwiftUI:
-    dependencies:
-       - package: Alamofire
-       - package: Kingfisher
-       - package: LinkNavigator
-       - package: Factory
-       - package: ValidatedPropertyKit
-       - package: Rswift
-         product: RswiftLibrary
-       - package: Firebase
-         product: FirebaseAuth
-       - package: Defaults
-       - package: Then
-
-    buildToolPlugins:
-       - plugin: RswiftGenerateInternalResources
-         package: Rswift
     type: application
     platform: iOS
     deploymentTarget: "15.0"
@@ -170,6 +154,21 @@ targets: # The List of our targets
                 else
                     echo "warning: SwiftFormat not installed, download from https://github.com/nicklockwood/SwiftFormat"
                 fi
+    dependencies:
+       - package: Alamofire
+       - package: Kingfisher
+       - package: LinkNavigator
+       - package: Factory
+       - package: ValidatedPropertyKit
+       - package: Rswift
+         product: RswiftLibrary
+       - package: Firebase
+         product: FirebaseAuth
+       - package: Defaults
+       - package: Then
+    buildToolPlugins:
+       - plugin: RswiftGenerateInternalResources
+         package: Rswift
 
   BaseSwiftUITests:
     type: bundle.unit-test
