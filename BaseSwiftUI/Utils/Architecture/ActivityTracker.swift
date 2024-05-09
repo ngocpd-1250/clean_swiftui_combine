@@ -6,8 +6,6 @@
 //
 
 import Combine
-import UIKit
-import Foundation
 
 final class ActivityTracker: ObservableObject {
     @Published private var loadingCount: Int = 0

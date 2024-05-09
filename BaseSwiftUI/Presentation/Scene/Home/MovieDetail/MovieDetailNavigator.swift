@@ -18,6 +18,6 @@ struct MovieDetailNavigator: MovieDetailNavigatorType {
     func showError(message: String) {
         let action = ActionButton(title: "OK", style: .cancel)
         let alert = Alert(message: message, buttons: [action], flagType: .error)
-        navigation.alert(target: .root, model: alert)
+        navigation.alert(model: alert)
     }
 }

@@ -1,5 +1,5 @@
 //
-//  MoviesViewModel.swift
+//  TopMoviesViewModel.swift
 //  BaseSwiftUI
 //
 //  Created by phan.duong.ngoc on 22/04/2024.
@@ -9,13 +9,13 @@ import Foundation
 import Factory
 import Combine
 
-struct MoviesViewModel {
-    let navigator: MoviesNavigatorType
+struct TopMoviesViewModel {
+    let navigator: TopMoviesNavigatorType
     @Injected(\.movieUseCase) private var movieUseCase
 }
 
 // MARK: - ViewModelType
-extension MoviesViewModel: ViewModel {
+extension TopMoviesViewModel: ViewModel {
     struct MoviesData {
         var topRated: [Movie] = []
         var nowPlaying: [Movie] = []

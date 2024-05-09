@@ -28,6 +28,7 @@ struct VerticalMovieCard: View {
                 Text(movie.title)
                     .font(.headline)
                     .lineLimit(2)
+                    .multilineTextAlignment(.leading)
                     .foregroundStyle(Color(R.color.labelPrimary))
                 HStack {
                     Image(R.image.icon_rating)

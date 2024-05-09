@@ -1,5 +1,5 @@
 //
-//  MoviesScreen.swift
+//  TopMoviesScreen.swift
 //  BaseSwiftUI
 //
 //  Created by phan.duong.ngoc on 22/04/2024.
@@ -9,9 +9,9 @@ import SwiftUI
 import Factory
 import Defaults
 
-struct MoviesScreen: View {
-    @ObservedObject var input: MoviesViewModel.Input
-    @ObservedObject var output: MoviesViewModel.Output
+struct TopMoviesScreen: View {
+    @ObservedObject var input: TopMoviesViewModel.Input
+    @ObservedObject var output: TopMoviesViewModel.Output
 
     private let cancelBag = CancelBag()
     private let toDetailTrigger = PublishRelay<Int>()
@@ -67,9 +67,9 @@ struct MoviesScreen: View {
         }
     }
 
-    init(viewModel: MoviesViewModel) {
-        let input = MoviesViewModel.Input(loadTrigger: loadTrigger.asDriver(),
-                                          toDetailTrigger: toDetailTrigger.asDriver())
+    init(viewModel: TopMoviesViewModel) {
+        let input = TopMoviesViewModel.Input(loadTrigger: loadTrigger.asDriver(),
+                                             toDetailTrigger: toDetailTrigger.asDriver())
         output = viewModel.transform(input, cancelBag: cancelBag)
         self.input = input
     }

@@ -16,7 +16,7 @@ struct HomeRouteGroup<RootNavigator: HomeRootNavigatorType> {
 
     var routers: [RouteBuilderOf<RootNavigator>] {
         [
-            MoviesRouteBuilder.generate(),
+            TopMoviesRouteBuilder.generate(),
             MoviesDetailRouteBuilder.generate(),
             TodosRouteBuilder.generate(),
             SettingsRouteBuilder.generate()

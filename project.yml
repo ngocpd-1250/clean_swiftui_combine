@@ -29,7 +29,7 @@ packages:
         version: 7.11.0
     LinkNavigator:
         url: https://github.com/interactord/LinkNavigator.git
-        version: 1.2.3
+        version: 1.2.5
     Factory:
         url: https://github.com/hmlongco/Factory.git
         version: 2.3.2
@@ -71,6 +71,9 @@ targets: # The List of our targets
           UIApplicationSupportsMultipleScenes: YES
         UISupportedInterfaceOrientations~iphone: [UIInterfaceOrientationPortrait]
         UISupportedInterfaceOrientations~ipad: [UIInterfaceOrientationPortrait]
+        CFBundleURLTypes:
+            - CFBundleURLSchemes:
+                - "testlink"
     sources:
       #Sources
       - path: BaseSwiftUI

@@ -22,8 +22,22 @@ struct MainApp: Scene {
             } else {
                 if isLoggedIn {
                     homeRoute()
+                        .onOpenURL { url in
+                            // You can test deep links by setting the URL Scheme to "testlink".
+                            // Example: testlink://host?email=foo@gmail.com&password=Aa@12345
+                            let action = ActionButton(title: "OK", style: .cancel)
+                            let alert = Alert(title: "Deeplink URL:", message: url.absoluteString, buttons: [action], flagType: .error)
+                            tabLinkNavigator.selectedTabPartialNavigator.alert(model: alert)
+                        }
                 } else {
                     authRoute()
+                        .onOpenURL { url in
+                            // You can test deep links by setting the URL Scheme to "testlink".
+                            // Example: testlink://host?email=foo@gmail.com&password=Aa@12345
+                            let action = ActionButton(title: "OK", style: .cancel)
+                            let alert = Alert(title: "Deeplink URL:", message: url.absoluteString, buttons: [action], flagType: .error)
+                            linkNavigator.alert(target: .root, model: alert)
+                        }
                 }
             }
         }

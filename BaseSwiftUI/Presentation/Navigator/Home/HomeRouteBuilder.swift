@@ -28,15 +28,15 @@ struct MoviesDetailRouteBuilder<RootNavigator: HomeRootNavigatorType> {
     }
 }
 
-// MARK: - MoviesScreen
-struct MoviesRouteBuilder<RootNavigator: HomeRootNavigatorType> {
+// MARK: - TopMoviesScreen
+struct TopMoviesRouteBuilder<RootNavigator: HomeRootNavigatorType> {
     static func generate() -> RouteBuilderOf<RootNavigator> {
         var matchPath: String { RoutePath.movies.rawValue }
         return .init(matchPath: matchPath) { navigator, _, _ -> RouteViewController? in
             return WrappingController(matchPath: matchPath) {
-                let navigator = MoviesNavigator(navigation: navigator)
-                let viewModel = MoviesViewModel(navigator: navigator)
-                MoviesScreen(viewModel: viewModel)
+                let navigator = TopMoviesNavigator(navigation: navigator)
+                let viewModel = TopMoviesViewModel(navigator: navigator)
+                TopMoviesScreen(viewModel: viewModel)
             }
         }
     }

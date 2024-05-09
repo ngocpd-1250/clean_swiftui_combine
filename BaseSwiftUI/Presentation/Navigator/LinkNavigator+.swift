@@ -7,13 +7,19 @@
 
 import LinkNavigator
 
+extension TabLinkNavigator {
+    var selectedTabPartialNavigator: TabPartialNavigator {
+        return tabRootPartialNavigators[mainController?.selectedIndex ?? 0]
+    }
+}
+
 extension LinkItem {
     init(routePaths: [RoutePath], items: String = "") {
-        self.init(pathList: routePaths.map { $0.rawValue }, items: items)
+        self.init(pathList: routePaths.map { $0.rawValue }, itemsString: items)
     }
 
     init(routePath: RoutePath, items: String = "") {
-        self.init(path: routePath.rawValue, items: items)
+        self.init(path: routePath.rawValue, itemsString: items)
     }
 
     init(routePath: RoutePath, items: Codable?) {
