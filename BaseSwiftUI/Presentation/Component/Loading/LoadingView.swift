@@ -13,7 +13,7 @@ struct LoadingView<Content>: View where Content: View {
     var content: () -> Content
 
     var body: some View {
-        GeometryReader { _ in
+        GeometryReader { geometry in
             ZStack(alignment: .center) {
                 content()
                     .disabled(isShowing)
@@ -29,6 +29,7 @@ struct LoadingView<Content>: View where Content: View {
                     .cornerRadius(6)
                     .opacity(isShowing ? 1 : 0)
             }
+            .frame(width: geometry.size.width, height: geometry.size.height)
         }
     }
 }

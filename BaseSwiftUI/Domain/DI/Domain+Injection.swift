@@ -19,4 +19,8 @@ extension Container {
     var settingsUseCase: Factory<SettingsUseCaseType> {
         Factory(self) { SettingsUseCase() }
     }
+
+    var todoUseCase: Factory<TodosUseCaseType> {
+        Factory(self) { TodosUseCase() }
+    }
 }

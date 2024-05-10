@@ -21,6 +21,9 @@
 "common.confirm.password" = "パスワードを確認";
 "common.dont.have.account" = "アカウントをお持ちでないですか？";
 "common.already.have.account" = "すでにアカウントをお持ちですか？";
+"common.see.more" = "もっと見る >";
+"common.tasks" = "タスク";
+"common.new.todo" = "新しいタスク";
 
 "tabbar.movies" = "映画";
 "tabbar.todos" = "すべて";
@@ -45,3 +48,9 @@
 "validation.password.maxlength" = "パスワードは255文字以下である必要があります。";
 "validation.confirm.password.empty" = "確認用のパスワードを入力してください。";
 "validation.confirm.password.invalid" = "パスワードが一致しません。";
+"validation.todo.item.invalid" = "メモと名前を入力してください";
+
+"todo.add" = "追加";
+"todo.name" = "名前";
+"todo.planning" = "計画は何ですか？";
+"todo.select.date" = "日付を選択";

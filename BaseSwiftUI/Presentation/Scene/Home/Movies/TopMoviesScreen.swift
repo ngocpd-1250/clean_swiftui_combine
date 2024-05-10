@@ -53,8 +53,12 @@ struct TopMoviesScreen: View {
         Screen(isLoading: $output.isLoading, localizeTitleResource: R.string.localizable.movieWatchTitle) {
             ScrollView(showsIndicators: false) {
                 VStack(alignment: .leading, spacing: 16) {
-                    nowPlayingMovies()
-                    topRatedMovies()
+                    if !output.data.nowPlaying.isEmpty {
+                        nowPlayingMovies()
+                    }
+                    if !output.data.topRated.isEmpty {
+                        topRatedMovies()
+                    }
                 }
             }
             .padding(Spacing.normal.value)

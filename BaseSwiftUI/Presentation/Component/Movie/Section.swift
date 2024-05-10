@@ -10,13 +10,21 @@ import SwiftUI
 struct Section<Content: View>: View {
     let title: String
     let content: () -> Content
+    var moreAction: () -> Void = {}
 
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
-            Text(title)
-                .fontWeight(.semibold)
-                .font(.title2)
-                .foregroundStyle(Color(R.color.labelPrimary))
+            HStack {
+                Text(title)
+                    .fontWeight(.semibold)
+                    .font(.title2)
+                    .foregroundStyle(Color(R.color.labelPrimary))
+
+                Spacer()
+
+                Button(R.string.localizable.commonSeeMore(), action: moreAction)
+                    .tint(Color(R.color.labelPrimary))
+            }
             content()
         }
     }

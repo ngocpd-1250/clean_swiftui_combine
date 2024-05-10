@@ -48,7 +48,23 @@ struct TodosRouteBuilder<RootNavigator: HomeRootNavigatorType> {
         var matchPath: String { RoutePath.todos.rawValue }
         return .init(matchPath: matchPath) { navigator, _, _ -> RouteViewController? in
             return WrappingController(matchPath: matchPath) {
-                TodosScreen(navigator: navigator)
+                let navigator = TodosNavigator(navigation: navigator)
+                let viewModel = TodosViewModel(navigator: navigator)
+                TodosScreen(viewModel: viewModel)
+            }
+        }
+    }
+}
+
+// MARK: - NewTodoScreen
+struct NewTodoRouteBuilder<RootNavigator: HomeRootNavigatorType> {
+    static func generate() -> RouteBuilderOf<RootNavigator> {
+        var matchPath: String { RoutePath.newTodo.rawValue }
+        return .init(matchPath: matchPath) { navigator, _, _ -> RouteViewController? in
+            return WrappingController(matchPath: matchPath, title: "") {
+                let navigator = NewTodoNavigator(navigation: navigator)
+                let viewModel = NewTodoViewModel(navigator: navigator)
+                NewTodoScreen(viewModel: viewModel)
             }
         }
     }
@@ -59,7 +75,7 @@ struct SettingsRouteBuilder<RootNavigator: HomeRootNavigatorType> {
     static func generate() -> RouteBuilderOf<RootNavigator> {
         var matchPath: String { RoutePath.settings.rawValue }
         return .init(matchPath: matchPath) { navigator, _, _ -> RouteViewController? in
-            WrappingController(matchPath: matchPath) {
+            WrappingController(matchPath: matchPath, title: "") {
                 let navigator = SettingsNavigator(navigation: navigator)
                 let viewModel = SettingsViewModel(navigator: navigator)
                 SettingsScreen(viewModel: viewModel)

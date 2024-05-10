@@ -64,7 +64,6 @@ struct MainApp: Scene {
             linkNavigator: linkNavigator,
             item: .init(routePath: Defaults[.isOnboardingCompleted] ? RoutePath.login : RoutePath.onboarding)
         )
-        .preferredColorScheme(isDarkMode ? .dark : .light)
         .background(Color(R.color.backgroundPrimary))
     }
 
@@ -96,7 +95,6 @@ struct MainApp: Scene {
             tabItemList: tabItems,
             isAnimatedForUpdateTabbar: false
         )
-        .preferredColorScheme(isDarkMode ? .dark : .light)
         .background(Color(R.color.backgroundPrimary))
         .onAppear {
             observerLanguageChange()

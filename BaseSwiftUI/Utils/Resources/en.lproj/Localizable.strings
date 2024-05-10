@@ -21,6 +21,9 @@
 "common.confirm.password" = "Confirm Password";
 "common.dont.have.account" = "Don’t have an account?";
 "common.already.have.account" = "Already have an account?";
+"common.see.more" = "See More >";
+"common.tasks" = "Tasks";
+"common.new.todo" = "New Task";
 
 "tabbar.movies" = "Movies";
 "tabbar.todos" = "Todos";
@@ -45,3 +48,9 @@
 "validation.password.maxlength" = "Password should be less than 255 characters.";
 "validation.confirm.password.empty" = "Please enter a confirm password.";
 "validation.confirm.password.invalid" = "Password does not match";
+"validation.todo.item.invalid" = "Please enter your note and name.";
+
+"todo.add" = "Add";
+"todo.name" = "Name";
+"todo.planning" = "What are your planning?";
+"todo.select.date" = "Select date";

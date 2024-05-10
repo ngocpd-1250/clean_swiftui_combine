@@ -14,5 +14,6 @@ enum RoutePath: String {
     case movies
     case movieDetail
     case todos
+    case newTodo
     case settings
 }

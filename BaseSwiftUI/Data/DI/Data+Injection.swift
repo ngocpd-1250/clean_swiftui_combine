@@ -7,6 +7,7 @@
 
 import Factory
 import FirebaseAuth
+import SwiftData
 
 extension Container {
     var auth: Factory<Auth> {
@@ -23,5 +24,16 @@ extension Container {
 
     var settingsRepository: Factory<SettingsRepository> {
         Factory(self) { SettingsRepositoryImpl() }
+    }
+
+    var todosRepository: Factory<TodosRepository> {
+        Factory(self) { TodosRepositoryImpl() }
+    }
+
+    @MainActor
+    var modelContext: Factory<ModelContext?> {
+        Factory(self) {
+            return (try? ModelContainer(for: TodoItem.self))?.mainContext
+        }
     }
 }

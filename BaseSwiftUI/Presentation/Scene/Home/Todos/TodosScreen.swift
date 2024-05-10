@@ -7,21 +7,90 @@
 
 import SwiftUI
 import Defaults
+import Combine
 
 struct TodosScreen: View {
-    private let navigator: HomeRootNavigatorType
+    @ObservedObject var input: TodosViewModel.Input
+    @ObservedObject var output: TodosViewModel.Output
 
-    init(navigator: HomeRootNavigatorType) {
-        self.navigator = navigator
-    }
+    private let cancelBag = CancelBag()
+    private let loadTrigger = PublishRelay<Void>()
+    private let toAddNew = PublishRelay<Void>()
 
     var body: some View {
         Screen {
-            VStack {
-                Text("Comming Soon")
-                    .foregroundStyle(Color(R.color.labelPrimary))
+            ZStack {
+                if output.todoLists.isEmpty {
+                    emptyView()
+                } else {
+                    todoListView()
+                }
+                addNewButton()
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
+        .onAppear {
+            loadTrigger.send(())
+        }
+    }
+
+    @ViewBuilder
+    func todoListView() -> some View {
+        ScrollView {
+            VStack {
+                LazyVGrid(columns: [GridItem(.adaptive(minimum: 150, maximum: 200),
+                                             spacing: Spacing.normal.value)],
+                          content: {
+                              ForEach(output.todoLists, id: \.category.id) { task in
+                                  TodoListItem(taskList: task)
+                              }
+                          })
+                          .id(Defaults[.language])
+                Spacer()
+            }
+            .padding()
+        }
+    }
+
+    @ViewBuilder
+    func emptyView() -> some View {
+        Image(R.image.todos_empty)
+            .resizable()
+            .frame(width: 200, height: 200, alignment: .center)
+            .padding(.bottom, 40)
+    }
+
+    @ViewBuilder
+    func addNewButton() -> some View {
+        VStack {
+            Spacer()
+
+            HStack {
+                Spacer()
+
+                Button(action: {
+                    toAddNew.send(())
+                }, label: {
+                    Image(systemName: "plus.circle.fill")
+                        .resizable()
+                        .frame(width: 40, height: 40)
+                        .padding()
+                        .tint(Color(R.color.primary))
+                })
+            }
+        }
+    }
+
+    init(viewModel: TodosViewModel) {
+        let input = TodosViewModel.Input(
+            loadTrigger: Publishers.Merge(
+                Driver.just(()),
+                loadTrigger.asDriver()
+            )
+            .asDriver(),
+            toAddNew: toAddNew.asDriver()
+        )
+        output = viewModel.transform(input, cancelBag: cancelBag)
+        self.input = input
     }
 }

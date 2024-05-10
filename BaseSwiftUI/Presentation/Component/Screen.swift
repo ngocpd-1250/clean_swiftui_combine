@@ -12,6 +12,7 @@ import RswiftResources
 struct Screen<Content>: View where Content: View {
     @Binding private var isLoading: Bool
     @State private var language = Defaults[.language]
+    @Default(.isDarkMode) var isDarkMode
     private var localizeTitleResource: StringResource?
     private var title: String?
 
@@ -40,6 +41,8 @@ struct Screen<Content>: View where Content: View {
         }
         .navigationTitle(getTitle())
         .background(Color(R.color.backgroundPrimary))
+        .environment(\.colorScheme, isDarkMode ? .dark : .light)
+        .preferredColorScheme(isDarkMode ? .dark : .light)
         .onAppear {
             Task {
                 for await value in Defaults.updates(.language) {
