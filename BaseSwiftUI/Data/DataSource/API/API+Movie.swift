@@ -13,7 +13,7 @@ extension API {
         return request(input)
     }
 
-    func getNowPlayingMovies(_ input: GetNowPlayingMoviesInput) -> Observable<GetNowPlayingMoviesOutput> {
+    func getUpcomingMovies(_ input: GetUpcomingMoviesInput) -> Observable<GetUpcomingMoviesOutput> {
         return request(input)
     }
 
@@ -42,16 +42,16 @@ extension API {
 }
 
 extension API {
-    final class GetNowPlayingMoviesInput: APIInput {
+    final class GetUpcomingMoviesInput: APIInput {
         init() {
-            super.init(urlString: API.Urls.Movie.nowPlaying,
+            super.init(urlString: API.Urls.Movie.upcoming,
                        parameters: nil,
                        method: .get,
                        requireAccessToken: false)
         }
     }
 
-    final class GetNowPlayingMoviesOutput: APIOutput {
+    final class GetUpcomingMoviesOutput: APIOutput {
         private(set) var movies: [Movie] = []
 
         private enum CodingKeys: String, CodingKey {

@@ -18,11 +18,11 @@ struct TopMoviesScreen: View {
     private let loadTrigger = PublishRelay<Bool>()
 
     @ViewBuilder
-    func nowPlayingMovies() -> some View {
-        Section(title: R.string.localizable.movieNowPlaying()) {
+    func upcomingMovies() -> some View {
+        Section(title: R.string.localizable.movieUpcoming()) {
             ScrollView(.horizontal, showsIndicators: false) {
                 LazyHStack(spacing: 16) {
-                    ForEach(output.data.nowPlaying) { movie in
+                    ForEach(output.data.upcoming) { movie in
                         Button {
                             toDetailTrigger.send(movie.id)
                         } label: {
@@ -53,8 +53,8 @@ struct TopMoviesScreen: View {
         Screen(isLoading: $output.isLoading, localizeTitleResource: R.string.localizable.movieWatchTitle) {
             ScrollView(showsIndicators: false) {
                 VStack(alignment: .leading, spacing: 16) {
-                    if !output.data.nowPlaying.isEmpty {
-                        nowPlayingMovies()
+                    if !output.data.upcoming.isEmpty {
+                        upcomingMovies()
                     }
                     if !output.data.topRated.isEmpty {
                         topRatedMovies()

@@ -18,7 +18,7 @@ extension API {
 extension API.Urls {
     enum Movie {
         static var topRated: String { return baseUrl / "movie" / "top_rated" }
-        static var nowPlaying: String { return baseUrl / "movie" / "upcoming" }
+        static var upcoming: String { return baseUrl / "movie" / "upcoming" }
         static var movieDetail: String { return baseUrl / "movie" / "%d" }
     }
 }

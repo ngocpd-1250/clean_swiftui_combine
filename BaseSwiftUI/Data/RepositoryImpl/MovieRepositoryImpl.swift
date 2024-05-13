@@ -17,9 +17,9 @@ struct MovieRepositoryImpl: MovieRepository {
             .eraseToAnyPublisher()
     }
 
-    func getNowPlayingMovies(page _: Int) -> Observable<[Movie]> {
-        let input = API.GetNowPlayingMoviesInput()
-        return API.shared.getNowPlayingMovies(input)
+    func getUpcomingMovies(page _: Int) -> Observable<[Movie]> {
+        let input = API.GetUpcomingMoviesInput()
+        return API.shared.getUpcomingMovies(input)
             .map { $0.movies }
             .eraseToAnyPublisher()
     }

@@ -18,7 +18,7 @@ struct TopMoviesViewModel {
 extension TopMoviesViewModel: ViewModel {
     struct MoviesData {
         var topRated: [Movie] = []
-        var nowPlaying: [Movie] = []
+        var upcoming: [Movie] = []
     }
 
     final class Input: ObservableObject {
@@ -44,9 +44,9 @@ extension TopMoviesViewModel: ViewModel {
         let reloadActivityTracker = ActivityTracker()
         let output = Output()
 
-        let nowPlaying = input.loadTrigger
+        let upcoming = input.loadTrigger
             .map { isReload in
-                self.movieUseCase.getNowPlayingMovies(page: 1)
+                self.movieUseCase.getUpcomingMovies(page: 1)
                     .trackError(errorTracker)
                     .trackActivity(isReload ? reloadActivityTracker : activityTracker)
                     .asDriver()
@@ -62,9 +62,9 @@ extension TopMoviesViewModel: ViewModel {
             }
             .switchToLatest()
 
-        Publishers.Zip(nowPlaying, topRated)
+        Publishers.Zip(upcoming, topRated)
             .map {
-                MoviesData(topRated: $0.0, nowPlaying: $0.1)
+                MoviesData(topRated: $0.0, upcoming: $0.1)
             }
             .assign(to: \.data, on: output)
             .cancel(with: cancelBag)

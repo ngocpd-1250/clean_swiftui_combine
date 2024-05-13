@@ -29,7 +29,7 @@
 "tabbar.todos" = "すべて";
 "tabbar.settings" = "設定";
 
-"movie.now.playing" = "現在上映中";
+"movie.upcoming" = "今後の予定";
 "movie.top.rated" = "トップ評価";
 "movie.release" = "リリース";
 "movie.watch.title" = "何を見たいですか？";
