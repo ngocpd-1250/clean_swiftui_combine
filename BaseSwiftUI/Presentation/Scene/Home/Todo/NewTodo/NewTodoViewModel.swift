@@ -42,7 +42,9 @@ extension NewTodoViewModel: ViewModel {
             .sink(receiveValue: navigator.close)
             .cancel(with: cancelBag)
 
-        let isValidInput = !input.name.isEmpty && !input.note.isEmpty
+        var isValidInput: Bool {
+            return !input.name.isEmpty && !input.note.isEmpty
+        }
 
         input.addTrigger
             .filter { !isValidInput }

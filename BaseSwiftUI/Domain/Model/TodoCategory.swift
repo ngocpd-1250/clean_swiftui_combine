@@ -35,4 +35,11 @@ enum TodoCategory: String, CaseIterable, Identifiable, Codable {
     var id: String {
         return rawValue
     }
+
+    static func byId(_ name: String) -> TodoCategory {
+        for category in TodoCategory.allCases where category.name.lowercased() == name.lowercased() {
+            return category
+        }
+        return .all
+    }
 }

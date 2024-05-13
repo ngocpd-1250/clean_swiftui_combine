@@ -19,11 +19,14 @@ extension TodosViewModel: ViewModel {
     final class Input: ObservableObject {
         let loadTrigger: Driver<Void>
         let toAddNew: Driver<Void>
+        let toTodoItems: Driver<TodoCategory>
 
         init(loadTrigger: Driver<Void>,
-             toAddNew: Driver<Void>) {
+             toAddNew: Driver<Void>,
+             toTodoItems: Driver<TodoCategory>) {
             self.loadTrigger = loadTrigger
             self.toAddNew = toAddNew
+            self.toTodoItems = toTodoItems
         }
     }
 
@@ -33,8 +36,13 @@ extension TodosViewModel: ViewModel {
 
     func transform(_ input: Input, cancelBag: CancelBag) -> Output {
         let output = Output()
+
         input.toAddNew
             .sink(receiveValue: navigator.toAddNew)
+            .cancel(with: cancelBag)
+
+        input.toTodoItems
+            .sink(receiveValue: navigator.toTodoItems(category:))
             .cancel(with: cancelBag)
 
         input.loadTrigger

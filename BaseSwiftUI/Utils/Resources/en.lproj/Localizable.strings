@@ -24,6 +24,7 @@
 "common.see.more" = "See More >";
 "common.tasks" = "Tasks";
 "common.new.todo" = "New Task";
+"common.delete" = "Delete";
 
 "tabbar.movies" = "Movies";
 "tabbar.todos" = "Todos";
@@ -50,6 +51,7 @@
 "validation.confirm.password.invalid" = "Password does not match";
 "validation.todo.item.invalid" = "Please enter your note and name.";
 
+"todo.title" = "To-do List";
 "todo.add" = "Add";
 "todo.name" = "Name";
 "todo.planning" = "What are your planning?";

@@ -24,6 +24,7 @@
 "common.see.more" = "もっと見る >";
 "common.tasks" = "タスク";
 "common.new.todo" = "新しいタスク";
+"common.delete" = "消去";
 
 "tabbar.movies" = "映画";
 "tabbar.todos" = "すべて";
@@ -50,6 +51,7 @@
 "validation.confirm.password.invalid" = "パスワードが一致しません。";
 "validation.todo.item.invalid" = "メモと名前を入力してください";
 
+"todo.title" = "やることリスト";
 "todo.add" = "追加";
 "todo.name" = "名前";
 "todo.planning" = "計画は何ですか？";

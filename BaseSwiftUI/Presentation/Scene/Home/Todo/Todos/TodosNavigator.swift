@@ -10,6 +10,7 @@ import LinkNavigator
 
 protocol TodosNavigatorType {
     func toAddNew()
+    func toTodoItems(category: TodoCategory)
 }
 
 struct TodosNavigator: TodosNavigatorType {
@@ -18,5 +19,10 @@ struct TodosNavigator: TodosNavigatorType {
     func toAddNew() {
         let item = LinkItem(routePath: .newTodo)
         navigation.fullSheet(linkItem: item, isAnimated: true, prefersLargeTitles: false)
+    }
+
+    func toTodoItems(category: TodoCategory) {
+        let item = LinkItem(routePath: .todoList, items: ListTodoParams(category: category))
+        navigation.next(linkItem: item, isAnimated: true)
     }
 }

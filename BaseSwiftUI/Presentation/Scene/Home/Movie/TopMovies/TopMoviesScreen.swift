@@ -6,8 +6,6 @@
 //
 
 import SwiftUI
-import Factory
-import Defaults
 
 struct TopMoviesScreen: View {
     @ObservedObject var input: TopMoviesViewModel.Input

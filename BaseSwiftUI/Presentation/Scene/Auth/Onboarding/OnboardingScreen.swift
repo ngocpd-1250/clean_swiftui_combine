@@ -6,9 +6,6 @@
 //
 
 import SwiftUI
-import LinkNavigator
-import Factory
-import Defaults
 
 struct OnboardingScreen: View {
     @ObservedObject var input: OnboardingViewModel.Input

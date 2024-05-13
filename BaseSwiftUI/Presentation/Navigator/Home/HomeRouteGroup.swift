@@ -20,6 +20,7 @@ struct HomeRouteGroup<RootNavigator: HomeRootNavigatorType> {
             MoviesDetailRouteBuilder.generate(),
             TodosRouteBuilder.generate(),
             NewTodoRouteBuilder.generate(),
+            ListTodoRouteBuilder.generate(),
             SettingsRouteBuilder.generate()
         ]
     }

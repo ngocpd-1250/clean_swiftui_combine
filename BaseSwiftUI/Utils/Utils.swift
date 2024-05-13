@@ -25,3 +25,9 @@ func formatDate(_ inputDate: String) -> String {
 
     return outputFormatter.string(from: date)
 }
+
+func formatDate(_ inputDate: Date) -> String {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "EEEE(MM-dd) HH:mm"
+    return dateFormatter.string(from: inputDate)
+}

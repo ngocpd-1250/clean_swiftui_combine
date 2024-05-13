@@ -1,4 +1,4 @@
-# iOS Clean Architecture Boilerplate Project with SwiftUI and Combine
+# Clean Architecture using SwiftUI + Combine
 
 This is a boilerplate project for iOS applications built using the Clean Architecture approach with SwiftUI and Combine.
 
@@ -11,6 +11,7 @@ This is a boilerplate project for iOS applications built using the Clean Archite
 - **Modularization**: Encourages modular design for better code organization and reusability.
 - **Unit Tests**: Includes unit tests for business logic and use cases.
 - **Dark Mode**: Programmatically supports Dark Mode switch.
+- **SwiftData**: SwiftData support.
 
 
 ## Requirements
@@ -39,12 +40,12 @@ This is a boilerplate project for iOS applications built using the Clean Archite
     Use `xcodegen` to generate the Xcode project:
 
     ```bash
-    xcodegen generate
+    xcodegen
     ```
 
 4. **Open Xcode**:
 
-    Open the generated Xcode workspace:
+    Open the generated Xcode project:
 
     ```bash
     open BaseSwiftUI.xcodeproj

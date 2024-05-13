@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import Defaults
 
 struct SettingsScreen: View {
     @ObservedObject var input: SettingsViewModel.Input

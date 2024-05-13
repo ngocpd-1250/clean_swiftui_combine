@@ -6,10 +6,7 @@
 //
 
 import SwiftUI
-import LinkNavigator
 import Firebase
-import Defaults
-import Then
 
 @main
 struct BaseSwiftUIApp: App {

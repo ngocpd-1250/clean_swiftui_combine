@@ -70,6 +70,26 @@ struct NewTodoRouteBuilder<RootNavigator: HomeRootNavigatorType> {
     }
 }
 
+// MARK: - TodoListScreen
+
+struct ListTodoParams: Codable {
+    let category: TodoCategory
+}
+
+struct ListTodoRouteBuilder<RootNavigator: HomeRootNavigatorType> {
+    static func generate() -> RouteBuilderOf<RootNavigator> {
+        var matchPath: String { RoutePath.todoList.rawValue }
+        return .init(matchPath: matchPath) { _, items, _ -> RouteViewController? in
+            return WrappingController(matchPath: matchPath, title: "") {
+                let params: ListTodoParams = items.decoded() ?? .init(category: .all)
+                let navigator = ListTodoNavigator()
+                let viewModel = ListTodoViewModel(navigator: navigator, category: params.category)
+                ListTodoScreen(viewModel: viewModel)
+            }
+        }
+    }
+}
+
 // MARK: - SettingsScreen
 struct SettingsRouteBuilder<RootNavigator: HomeRootNavigatorType> {
     static func generate() -> RouteBuilderOf<RootNavigator> {

@@ -53,7 +53,7 @@ targets: # The List of our targets
   BaseSwiftUI:
     type: application
     platform: iOS
-    deploymentTarget: "15.0"
+    deploymentTarget: "17.0"
     devices: [iPhone]
     info:
       path: BaseSwiftUI/Info.plist

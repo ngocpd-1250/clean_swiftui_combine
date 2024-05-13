@@ -16,9 +16,10 @@ struct TodosScreen: View {
     private let cancelBag = CancelBag()
     private let loadTrigger = PublishRelay<Void>()
     private let toAddNew = PublishRelay<Void>()
+    private let toTodoItems = PublishRelay<TodoCategory>()
 
     var body: some View {
-        Screen {
+        Screen(localizeTitleResource: R.string.localizable.todoTitle) {
             ZStack {
                 if output.todoLists.isEmpty {
                     emptyView()
@@ -41,8 +42,12 @@ struct TodosScreen: View {
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 150, maximum: 200),
                                              spacing: Spacing.normal.value)],
                           content: {
-                              ForEach(output.todoLists, id: \.category.id) { task in
-                                  TodoListItem(taskList: task)
+                              ForEach(output.todoLists, id: \.category.id) { todo in
+                                  TodoListItem(todoList: todo)
+                                      .onTapGesture {
+                                          print("onTapGesture \(todo.category.id)")
+                                          toTodoItems.send(todo.category)
+                                      }
                               }
                           })
                           .id(Defaults[.language])
@@ -88,7 +93,8 @@ struct TodosScreen: View {
                 loadTrigger.asDriver()
             )
             .asDriver(),
-            toAddNew: toAddNew.asDriver()
+            toAddNew: toAddNew.asDriver(),
+            toTodoItems: toTodoItems.asDriver()
         )
         output = viewModel.transform(input, cancelBag: cancelBag)
         self.input = input
