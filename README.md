@@ -1,18 +1,16 @@
 # Clean Architecture using SwiftUI + Combine
 
-This is a boilerplate project for iOS applications built using the Clean Architecture approach with SwiftUI and Combine.
+The example app uses the Clean Architecture approach with SwiftUI and Combine.
 
 ## Features
-
+- **Xcodegen**: Automated project configuration.
 - **Clean Architecture**: Separation of concerns with clear boundaries between layers.
 - **SwiftUI**: Declarative UI framework for building modern iOS apps.
 - **Combine**: Reactive framework for handling asynchronous events and data streams.
 - **Dependency Injection**: Easy management of dependencies and testability.
-- **Modularization**: Encourages modular design for better code organization and reusability.
 - **Unit Tests**: Includes unit tests for business logic and use cases.
 - **Dark Mode**: Programmatically supports Dark Mode switch.
 - **SwiftData**: SwiftData support.
-
 
 ## Requirements
 
