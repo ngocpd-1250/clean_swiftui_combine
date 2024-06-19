@@ -17,6 +17,9 @@ struct BaseButton: View {
             Text(title)
                 .foregroundStyle(isEnabled ? .white : Color.white.opacity(0.5))
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .transaction { transaction in
+                    transaction.animation = nil
+                }
         }
         .foregroundStyle(.white)
         .background(Color(R.color.primary))

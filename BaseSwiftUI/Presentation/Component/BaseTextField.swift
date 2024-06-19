@@ -53,12 +53,10 @@ struct BaseTextField: View {
                 .padding(.trailing, Spacing.small.value)
 
             if !errorMessage.isEmpty {
-                withAnimation {
-                    Text(errorMessage)
-                        .foregroundStyle(.red)
-                        .font(.footnote)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                }
+                Text(errorMessage)
+                    .foregroundStyle(.red)
+                    .font(.footnote)
+                    .frame(maxWidth: .infinity, alignment: .leading)
             }
         }
     }
