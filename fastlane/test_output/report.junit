@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites name='BaseSwiftUITests.xctest' tests='15' failures='0'>
+  <testsuite name='BaseSwiftUITests.LoginViewModelTests' tests='6' failures='0'>
+    <testcase classname='BaseSwiftUITests.LoginViewModelTests' name='test_loginTrigger_withEmptyEmailEmptyPassword_showError_disableLoginButton' time='0.310'/>
+    <testcase classname='BaseSwiftUITests.LoginViewModelTests' name='test_loginTrigger_withInvalidEmail_showError_disableLoginButton' time='0.307'/>
+    <testcase classname='BaseSwiftUITests.LoginViewModelTests' name='test_loginTrigger_withInvalidPassword_showError_disableLoginButton' time='0.304'/>
+    <testcase classname='BaseSwiftUITests.LoginViewModelTests' name='test_loginTrigger_withValidEmailPassword_accountBannedError_showError' time='0.309'/>
+    <testcase classname='BaseSwiftUITests.LoginViewModelTests' name='test_loginTrigger_withValidEmailPassword_loginSuccess' time='0.305'/>
+    <testcase classname='BaseSwiftUITests.LoginViewModelTests' name='test_toRegisterTrigger_toRegister' time='0.304'/>
+  </testsuite>
+  <testsuite name='BaseSwiftUITests.RegisterViewModelTests' tests='5' failures='0'>
+    <testcase classname='BaseSwiftUITests.RegisterViewModelTests' name='test_registerTrigger_withConfirmPasswordNotMatch_showError_disableRegisterButton' time='0.306'/>
+    <testcase classname='BaseSwiftUITests.RegisterViewModelTests' name='test_registerTrigger_withEmptyEmailEmptyPasswordEmptyConfirmPassword_showError_disableRegisterButton' time='0.307'/>
+    <testcase classname='BaseSwiftUITests.RegisterViewModelTests' name='test_registerTrigger_withInvalidEmailInvalidPasword_showError_disableRegisterButton' time='0.306'/>
+    <testcase classname='BaseSwiftUITests.RegisterViewModelTests' name='test_registerTrigger_withValidInfo_showSuccess' time='0.303'/>
+    <testcase classname='BaseSwiftUITests.RegisterViewModelTests' name='test_toLoginTrigger_toLogin' time='0.302'/>
+  </testsuite>
+  <testsuite name='BaseSwiftUITests.SettingsViewModelTests' tests='4' failures='0'>
+    <testcase classname='BaseSwiftUITests.SettingsViewModelTests' name='test_loadTrigger_getDarkModeStatusAndCurrentLanguage' time='0.310'/>
+    <testcase classname='BaseSwiftUITests.SettingsViewModelTests' name='test_logoutTrigger_logout' time='0.305'/>
+    <testcase classname='BaseSwiftUITests.SettingsViewModelTests' name='test_toggleDarkModeTrigger_toggleDarkModeStatus' time='0.302'/>
+    <testcase classname='BaseSwiftUITests.SettingsViewModelTests' name='test_toggleLanguageTrigger_toggleLanguage' time='0.316'/>
+  </testsuite>
+</testsuites>
