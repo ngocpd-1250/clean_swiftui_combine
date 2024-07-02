@@ -176,7 +176,7 @@ targets: # The List of our targets
   BaseSwiftUITests:
     type: bundle.unit-test
     platform: iOS
-    deploymentTarget: "15.0"
+    deploymentTarget: "17.0"
     sources:
       - path: BaseSwiftUITests
     info:

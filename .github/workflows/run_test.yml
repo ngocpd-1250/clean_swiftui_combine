@@ -1,0 +1,28 @@
+name: Run Unit Tests
+run-name: ${{ github.actor }} is running unit tests
+
+on:
+  push:
+    branches:
+      - develop
+  pull_request:
+    branches:
+      - develop
+
+jobs:
+  build-and-test:
+    name: Build and test
+    runs-on: macos-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Select Xcode version
+        run: sudo xcode-select -s '/Applications/Xcode_15.0.app/Contents/Developer'
+      - name: Setup
+        run: |
+          brew install xcodegen
+          bundle install
+          xcodegen
+      - name: Test
+        run: |
+          bundle exec fastlane test_dev
