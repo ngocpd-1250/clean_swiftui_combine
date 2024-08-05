@@ -2,6 +2,17 @@
 
 The example app uses the Clean Architecture approach with SwiftUI and Combine.
 
+<p align="center">
+  <img src="screenshots/onboarding.png" width="20%"/>
+  <img src="screenshots/login.png" width="20%"/>
+  <img src="screenshots/register.png" width="20%"/>
+  <img src="screenshots/top_movie.png" width="20%"/>
+  <img src="screenshots/movie_detail.png" width="20%"/>
+  <img src="screenshots/todo_list.png" width="20%"/>
+  <img src="screenshots/add_todo.png" width="20%"/>
+  <img src="screenshots/settings.png" width="20%"/>
+</p>
+
 ## Features
 - **Xcodegen**: Automated project configuration.
 - **Clean Architecture**: Separation of concerns with clear boundaries between layers.
