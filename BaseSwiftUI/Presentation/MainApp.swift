@@ -21,23 +21,9 @@ struct MainApp: Scene {
                 unitTestView()
             } else {
                 if isLoggedIn {
-                    homeRoute()
-                        .onOpenURL { url in
-                            // You can test deep links by setting the URL Scheme to "testlink".
-                            // Example: testlink://host?email=foo@gmail.com&password=Aa@12345
-                            let action = ActionButton(title: "OK", style: .cancel)
-                            let alert = Alert(title: "Deeplink URL:", message: url.absoluteString, buttons: [action], flagType: .error)
-                            tabLinkNavigator.selectedTabPartialNavigator.alert(model: alert)
-                        }
+                    HomeRoute()
                 } else {
-                    authRoute()
-                        .onOpenURL { url in
-                            // You can test deep links by setting the URL Scheme to "testlink".
-                            // Example: testlink://host?email=foo@gmail.com&password=Aa@12345
-                            let action = ActionButton(title: "OK", style: .cancel)
-                            let alert = Alert(title: "Deeplink URL:", message: url.absoluteString, buttons: [action], flagType: .error)
-                            linkNavigator.alert(target: .root, model: alert)
-                        }
+                    AuthRoute()
                 }
             }
         }
@@ -52,22 +38,32 @@ struct MainApp: Scene {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .preferredColorScheme(isDarkMode ? .dark : .light)
     }
+}
 
-    // MARK: - Auth
+private struct AuthRoute: View {
     private let linkNavigator = SingleLinkNavigator(
         routeBuilderItemList: AuthRouteGroup().routers,
         dependency: NavigatorDependency())
 
-    @ViewBuilder
-    func authRoute() -> some View {
+    var body: some View {
         LinkNavigationView(
             linkNavigator: linkNavigator,
             item: .init(routePath: Defaults[.isOnboardingCompleted] ? RoutePath.login : RoutePath.onboarding)
         )
         .background(Color(R.color.backgroundPrimary))
+        .onOpenURL { url in
+            // You can test deep links by setting the URL Scheme to "testlink".
+            // Example: testlink://host?email=foo@gmail.com&password=Aa@12345
+            let action = ActionButton(title: "OK", style: .cancel)
+            let alert = Alert(title: "Deeplink URL:", message: url.absoluteString, buttons: [action], flagType: .error)
+            linkNavigator.alert(target: .root, model: alert)
+        }
     }
+}
 
-    // MARK: - Home
+private struct HomeRoute: View {
+    @Default(.language) var language
+
     private let tabLinkNavigator = TabLinkNavigator(
         routeBuilderItemList: HomeRouteGroup().routers,
         dependency: NavigatorDependency())
@@ -87,9 +83,8 @@ struct MainApp: Scene {
             linkItem: .init(routePath: .settings))
     ]
 
-    @ViewBuilder
-    func homeRoute() -> some View {
-        TabLinkNavigationView(
+    var body: some View {
+        return TabLinkNavigationView(
             linkNavigator: tabLinkNavigator,
             isHiddenDefaultTabbar: false,
             tabItemList: tabItems,
