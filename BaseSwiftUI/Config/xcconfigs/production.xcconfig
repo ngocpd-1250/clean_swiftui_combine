@@ -10,6 +10,8 @@
 
 APP_NAME = [PROD]SwiftUI
 PRODUCT_BUNDLE_IDENTIFIER = ngocpd.SwiftUIBase.production
+APP_VERSION = 0.0.9
+APP_BUILD_VERSION = 1
 
 // API:
 API_ENDPOINT = https:\/\/api.themoviedb.org
