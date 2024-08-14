@@ -48,7 +48,7 @@ struct TopMoviesScreen: View {
     }
 
     var body: some View {
-        Screen(isLoading: $output.isLoading, localizeTitleResource: R.string.localizable.movieWatchTitle) {
+        Screen(isLoading: $output.isLoading, title: R.string.localizable.movieWatchTitle()) {
             ScrollView(showsIndicators: false) {
                 VStack(alignment: .leading, spacing: 16) {
                     if !output.data.upcoming.isEmpty {

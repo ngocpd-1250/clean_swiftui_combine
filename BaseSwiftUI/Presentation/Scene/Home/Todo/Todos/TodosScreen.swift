@@ -19,7 +19,7 @@ struct TodosScreen: View {
     private let toTodoItems = PublishRelay<TodoCategory>()
 
     var body: some View {
-        Screen(localizeTitleResource: R.string.localizable.todoTitle) {
+        Screen(title: R.string.localizable.todoTitle()) {
             ZStack {
                 if output.todoLists.isEmpty {
                     emptyView()
