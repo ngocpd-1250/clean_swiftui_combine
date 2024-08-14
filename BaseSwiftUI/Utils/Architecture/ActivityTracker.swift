@@ -27,9 +27,9 @@ final class ActivityTracker: ObservableObject {
 
     func trackActivity<P: Publisher>(_ source: P) -> AnyPublisher<P.Output, P.Failure> {
         source
-            .handleEvents(receiveSubscription: { _ in self.increment() },
-                          receiveCompletion: { _ in self.decrement() },
-                          receiveCancel: { self.decrement() })
+            .handleEvents(receiveSubscription: { [weak self] _ in self?.increment() },
+                          receiveCompletion: { [weak self] _ in self?.decrement() },
+                          receiveCancel: { [weak self] in self?.decrement() })
             .eraseToAnyPublisher()
     }
 }
