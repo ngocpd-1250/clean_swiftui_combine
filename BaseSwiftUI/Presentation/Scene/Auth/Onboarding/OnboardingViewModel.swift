@@ -16,12 +16,8 @@ struct OnboardingViewModel {
 
 // MARK: - ViewModelType
 extension OnboardingViewModel: ViewModel {
-    final class Input: ObservableObject {
+    struct Input {
         let setIsDoneOnboarding: Driver<Void>
-
-        init(setIsDoneOnboarding: Driver<Void>) {
-            self.setIsDoneOnboarding = setIsDoneOnboarding
-        }
     }
 
     final class Output: ObservableObject {}

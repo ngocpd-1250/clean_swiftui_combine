@@ -9,8 +9,8 @@ import SwiftUI
 import Combine
 
 struct RegisterScreen: View {
-    @ObservedObject var input: RegisterViewModel.Input
-    @ObservedObject var output: RegisterViewModel.Output
+    @ObservedObject private var input: RegisterViewModel.Input
+    @ObservedObject private var output: RegisterViewModel.Output
 
     private let cancelBag = CancelBag()
     private let registerTrigger = PublishRelay<Void>()

@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct OnboardingScreen: View {
-    @ObservedObject var input: OnboardingViewModel.Input
-    @ObservedObject var output: OnboardingViewModel.Output
+    private var input: OnboardingViewModel.Input
+    @ObservedObject private var output: OnboardingViewModel.Output
 
     private let cancelBag = CancelBag()
     private let setIsDoneOnboarding = PublishRelay<Void>()

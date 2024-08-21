@@ -17,18 +17,10 @@ struct ListTodoViewModel {
 
 // MARK: - ViewModelType
 extension ListTodoViewModel: ViewModel {
-    final class Input: ObservableObject {
+    struct Input {
         let loadTrigger: Driver<Void>
         let updateCompleted: Driver<TodoItem>
         let deleteItem: Driver<TodoItem>
-
-        init(loadTrigger: Driver<Void>,
-             updateCompleted: Driver<TodoItem>,
-             deleteItem: Driver<TodoItem>) {
-            self.loadTrigger = loadTrigger
-            self.updateCompleted = updateCompleted
-            self.deleteItem = deleteItem
-        }
     }
 
     final class Output: ObservableObject {

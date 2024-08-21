@@ -10,7 +10,7 @@ import Defaults
 import Combine
 
 struct TodosScreen: View {
-    @ObservedObject var input: TodosViewModel.Input
+    private var input: TodosViewModel.Input
     @ObservedObject var output: TodosViewModel.Output
 
     private let cancelBag = CancelBag()

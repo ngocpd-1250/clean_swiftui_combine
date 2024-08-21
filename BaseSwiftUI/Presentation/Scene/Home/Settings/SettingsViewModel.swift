@@ -16,21 +16,11 @@ struct SettingsViewModel {
 
 // MARK: - ViewModelType
 extension SettingsViewModel: ViewModel {
-    final class Input: ObservableObject {
+    struct Input {
         let loadTrigger: Driver<Void>
         let logoutTrigger: Driver<Void>
         let toggleDarkModeTrigger: Driver<Void>
         let toggleLanguageTrigger: Driver<Void>
-
-        init(loadTrigger: Driver<Void>,
-             logoutTrigger: Driver<Void>,
-             toggleDarkModeTrigger: Driver<Void>,
-             toggleLanguageTrigger: Driver<Void>) {
-            self.loadTrigger = loadTrigger
-            self.logoutTrigger = logoutTrigger
-            self.toggleDarkModeTrigger = toggleDarkModeTrigger
-            self.toggleLanguageTrigger = toggleLanguageTrigger
-        }
     }
 
     final class Output: ObservableObject {

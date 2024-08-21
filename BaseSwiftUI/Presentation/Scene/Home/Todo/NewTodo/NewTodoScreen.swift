@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct NewTodoScreen: View {
-    @ObservedObject var input: NewTodoViewModel.Input
-    @ObservedObject var output: NewTodoViewModel.Output
+    @ObservedObject private var input: NewTodoViewModel.Input
+    @ObservedObject private var output: NewTodoViewModel.Output
 
     private let cancelBag = CancelBag()
     private let closeTrigger = PublishRelay<Void>()

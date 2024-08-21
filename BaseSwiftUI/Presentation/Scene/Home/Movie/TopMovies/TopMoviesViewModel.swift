@@ -21,15 +21,9 @@ extension TopMoviesViewModel: ViewModel {
         var upcoming: [Movie] = []
     }
 
-    final class Input: ObservableObject {
+    struct Input {
         let loadTrigger: Driver<Bool>
         let toDetailTrigger: Driver<Int>
-
-        init(loadTrigger: Driver<Bool>,
-             toDetailTrigger: Driver<Int>) {
-            self.loadTrigger = loadTrigger
-            self.toDetailTrigger = toDetailTrigger
-        }
     }
 
     final class Output: ObservableObject {

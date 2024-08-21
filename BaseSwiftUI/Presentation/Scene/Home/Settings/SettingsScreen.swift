@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct SettingsScreen: View {
-    @ObservedObject var input: SettingsViewModel.Input
-    @ObservedObject var output: SettingsViewModel.Output
+    private var input: SettingsViewModel.Input
+    @ObservedObject private var output: SettingsViewModel.Output
 
     private let cancelBag = CancelBag()
     private let logoutTrigger = PublishRelay<Void>()

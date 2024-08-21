@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct TopMoviesScreen: View {
-    @ObservedObject var input: TopMoviesViewModel.Input
-    @ObservedObject var output: TopMoviesViewModel.Output
+    private var input: TopMoviesViewModel.Input
+    @ObservedObject private var output: TopMoviesViewModel.Output
 
     private let cancelBag = CancelBag()
     private let toDetailTrigger = PublishRelay<Int>()

@@ -18,12 +18,8 @@ struct MovieDetailViewModel {
 
 // MARK: - ViewModelType
 extension MovieDetailViewModel: ViewModel {
-    final class Input: ObservableObject {
+    struct Input {
         let loadTrigger: Driver<Bool>
-
-        init(loadTrigger: Driver<Bool>) {
-            self.loadTrigger = loadTrigger
-        }
     }
 
     final class Output: ObservableObject {

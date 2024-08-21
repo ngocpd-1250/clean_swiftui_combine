@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct LoginScreen: View {
-    @ObservedObject var input: LoginViewModel.Input
-    @ObservedObject var output: LoginViewModel.Output
+    @ObservedObject private var input: LoginViewModel.Input
+    @ObservedObject private var output: LoginViewModel.Output
 
     private let cancelBag = CancelBag()
     private let loginTrigger = PublishRelay<Void>()

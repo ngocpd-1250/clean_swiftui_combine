@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct ListTodoScreen: View {
-    @ObservedObject var input: ListTodoViewModel.Input
-    @ObservedObject var output: ListTodoViewModel.Output
+    @ObservedObject private var output: ListTodoViewModel.Output
+    private var input: ListTodoViewModel.Input
 
     private let cancelBag = CancelBag()
     private let updateCompleted = PublishRelay<TodoItem>()

@@ -9,8 +9,8 @@ import SwiftUI
 import Kingfisher
 
 struct MovieDetailScreen: View {
-    @ObservedObject var input: MovieDetailViewModel.Input
-    @ObservedObject var output: MovieDetailViewModel.Output
+    private var input: MovieDetailViewModel.Input
+    @ObservedObject private var output: MovieDetailViewModel.Output
 
     private let cancelBag = CancelBag()
     private let loadTrigger = PublishRelay<Bool>()

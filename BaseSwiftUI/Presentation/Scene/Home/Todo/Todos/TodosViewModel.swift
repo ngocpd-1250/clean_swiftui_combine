@@ -16,18 +16,10 @@ struct TodosViewModel {
 
 // MARK: - ViewModelType
 extension TodosViewModel: ViewModel {
-    final class Input: ObservableObject {
+    struct Input {
         let loadTrigger: Driver<Void>
         let toAddNew: Driver<Void>
         let toTodoItems: Driver<TodoCategory>
-
-        init(loadTrigger: Driver<Void>,
-             toAddNew: Driver<Void>,
-             toTodoItems: Driver<TodoCategory>) {
-            self.loadTrigger = loadTrigger
-            self.toAddNew = toAddNew
-            self.toTodoItems = toTodoItems
-        }
     }
 
     final class Output: ObservableObject {
