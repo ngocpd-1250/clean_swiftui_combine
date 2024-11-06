@@ -13,7 +13,6 @@ import Then
 struct MainApp: Scene {
     @Default(.isLoggedIn) var isLoggedIn
     @Default(.isDarkMode) var isDarkMode
-    @Default(.language) var language
 
     var body: some Scene {
         WindowGroup {
